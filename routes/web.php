@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Admin\NewsController;
+use App\Http\Controllers\Admin\ProfileController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,10 +22,8 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'admin'], function() {
     // news
-    Route::get('news/create', 'Admin\NewsController@add');
+    Route::get('news/create', 'App\Http\Controllers\Admin\NewsController@add');
     // profile
-    Route::get('profile/create', 'Admin\ProfileController@add');
-    Route::get('profile/edit', 'Admin\ProfileController@edit');
+    Route::get('profile/create', 'App\Http\Controllers\Admin\ProfileController@add');
+    Route::get('profile/edit', 'App\Http\Controllers\Admin\ProfileController@edit');
 });
-
-Route::get('XXX', 'AAAController@bbb');
